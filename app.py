@@ -35,10 +35,10 @@ def about_page():
 @app.route("/submit", methods = ['GET', 'POST'])
 def get_output():
 	if request.method == 'POST':
-		img = request.files['my_image']
-
-		img_path = os.path.join("app\static\" + img.filename)
-		img.save(img_path)
+		img = request.files['image']
+		imagename =  image.filename
+		img_path = os.path.join("app\static\uploads" +imagename)
+		image.save(img_path)
 
 		p = predict_label(img_path)
 
