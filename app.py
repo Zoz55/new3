@@ -17,7 +17,7 @@ def predict_label(img_path):
 	p = model.predict_classes(i)
 	return dic[p[0]]
 
-app = Flask(__name__)
+app = Flask(__name__,  static_folder="static")
 CORS(app)
 
 filename1 = 'chest_model_balanced.h5'
