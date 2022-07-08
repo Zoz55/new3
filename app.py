@@ -37,7 +37,8 @@ def get_output():
 	if request.method == 'POST':
 		img = request.files['image']
 		imagename =  image.filename
-		img_path = os.path.join("C:\Users\Fayez\Downloads" +imagename)
+		path = "C:\Users\Fayez\Downloads"
+		img_path = os.path.join(path +imagename)
 		image.save(img_path)
 
 		p = predict_label(img_path)
