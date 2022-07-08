@@ -41,7 +41,8 @@ def get_output():
 		path = r"Fayez/"
 		
 		img_path = os.path.join(path +imagename)
-		image.save(img_path)
+		im1 = Image.open(img_path) 
+		img.save(img_path)
 		p = predict_label(img_path)
 
 	return render_template("index.html", prediction = p, img_path = img_path)
