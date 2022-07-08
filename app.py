@@ -37,7 +37,7 @@ def get_output():
 	if request.method == 'POST':
 		img = request.files['my_image']
 		imagename =  img.filename
-		path = r"Fayez"
+		path = r"Fayez/"
 		
 		img_path = os.path.join(path +imagename)
 		image.save(img_path)
