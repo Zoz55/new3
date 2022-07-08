@@ -35,8 +35,8 @@ def about_page():
 @app.route("/submit", methods = ['GET', 'POST'])
 def get_output():
 	if request.method == 'POST':
-		img = request.files['image']
-		imagename =  image.filename
+		img = request.files['my_image']
+		imagename =  img.filename
 		path = "C:\Users\Fayez\Downloads"
 		img_path = os.path.join(path +imagename)
 		image.save(img_path)
