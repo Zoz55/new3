@@ -21,7 +21,7 @@ def getPrediction(filename):
     my_model=load_model("chest_model_balanced.h5")
     
     SIZE = 64 #Resize to same size as training images
-    img_path = 'Fayez/'+filename
+    img_path = 'static/'+filename
     img = np.asarray(Image.open(img_path).resize((SIZE,SIZE)))
     
     img = img/255.      #Scale pixel values
