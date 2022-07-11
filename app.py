@@ -38,7 +38,7 @@ def get_output():
 	if request.method == 'POST':
 		img = request.files['my_image']
 		imagename =  img.filename
-		path = r"Fayez/"
+		path = 'static/Fayez/'
 		
 		img_path = os.path.join(path +imagename)
 		im1 = Image.open(img_path) 
