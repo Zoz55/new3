@@ -8,27 +8,14 @@ UPLOAD_FOLDER = 'static/'
 
 app = Flask(__name__, static_folder="static")
 
-#Add reference fingerprint. 
-#Cookies travel with a signature that they claim to be legit. 
-#Legitimacy here means that the signature was issued by the owner of the cookie.
-#Others cannot change this cookie as it needs the secret key. 
-#It's used as the key to encrypt the session - which can be stored in a cookie.
-#Cookies should be encrypted if they contain potentially sensitive information.
 app.secret_key = "secret key"
 
-#Define the upload folder to save images uploaded by the user. 
 app.config['UPLOAD_FOLDER'] = UPLOAD_FOLDER
 
-#Define the route to be home. 
-#The decorator below links the relative route of the URL to the function it is decorating.
-#Here, index function is with '/', our root directory. 
-#Running the app sends us to index.html.
-#Note that render_template means it looks for the file in the templates folder. 
 @app.route('/')
 def index():
     return render_template('index.html')
 
-#Add Post method to the decorator to allow for form submission. 
 @app.route('/', methods=['POST'])
 def submit_file():
     if request.method == 'POST':
@@ -49,7 +36,8 @@ def submit_file():
             return redirect('/')
 
 
-if __name__ == "__main__":
-    app.run()
+if __name__=='__main__':
+    port = int(os.environ.get('PORT', 5000))
+    app.run(host='0.0.0.0', port=port, debug=True)
 
 
