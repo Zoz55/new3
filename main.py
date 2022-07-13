@@ -18,7 +18,7 @@ def getPrediction(filename):
     
     
     #Load model
-    my_model=load_model("chest_model_balanced.h5")
+    my_model=load_model("chest_model_deploy.h5")
     
     SIZE = 64 #Resize to same size as training images
     img_path = 'static/'+filename
