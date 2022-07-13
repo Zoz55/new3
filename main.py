@@ -26,7 +26,7 @@ def getPrediction(filename):
     
     img = img/255.      #Scale pixel values
     
-    img = np.expand_dims(img, axis=1)  #Get it tready as input to the network       
+    img = np.expand_dims(img, axis=0)  #Get it tready as input to the network       
     
     pred = my_model.predict(img) #Predict                    
     
